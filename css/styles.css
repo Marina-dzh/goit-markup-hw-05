@@ -562,7 +562,7 @@ height: 70px;} */
     height: 100%;
 
     transition-property: opacity, visability ;
-    transition-duration: 600ms;
+    transition-duration: var(--duration);
     transition-timing-function: var(--func);
 }
 
@@ -586,7 +586,7 @@ height: 70px;} */
     border-radius: 4px;
 
     transition-property: transform, visibility, opacity;
-    transition-duration: 600ms;
+    transition-duration: var(--duration);
     transition-timing-function: var(--func) ;
 }
 .backdrop.is-hidden .modal{
