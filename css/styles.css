@@ -19,7 +19,7 @@
     --subdev: 3;
     --command: 4;
     --work: 9;
-    --duration: 2500ms;
+    --duration: 250ms;
     --func: cubic-bezier(0.4, 0, 0.2, 1); 
 
 }
@@ -180,10 +180,7 @@ body {
 
 .icon-header{
     margin-right: 10px;
-    --color1:currentColor ;
-
-
-
+    fill:currentColor ;
     }
 
 
@@ -365,12 +362,13 @@ height: 70px;} */
     display: flex;
 
     color: var(--icon-color);
-    
     transition-property: color,background-color ;
     transition-duration: var(--duration);
     transition-timing-function: var(--func);
 }
-
+.social-icon{
+    fill: currentColor;
+}
 .item-social:hover , .item-social:focus{
     color: var(--bcg);
     background-color: var(--acc);
@@ -392,12 +390,13 @@ height: 70px;} */
     border: 1px solid var(--border-client);
     border-radius: 4px;
 
+    color: var(--icon-color);
     transition-property: color, border ;
     transition-duration: var(--duration);
     transition-timing-function: var(--func);
 }
 .item-client:hover, .item-client:focus{
-    --color4:var(--acc);
+    color:var(--acc);
     border: 1px solid var(--acc);
 }
 
@@ -459,7 +458,7 @@ height: 70px;} */
     border-radius: 50%;
     display: flex;
     background-color: var(--bcg-footer-logo);
-    --color4:var(--bcg);
+    color:var(--bcg);
     
     transition-property: background-color;
     transition-duration: var(--duration);
@@ -561,21 +560,38 @@ height: 70px;} */
 background: rgba(0, 0, 0, 0.2);
 width: 100%;
 height: 100%;
+
+transition-property: opacity, visability ;
+transition-duration: 600ms;
+transition-timing-function: var(--func);
 }
 
 .backdrop.is-hidden{
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    
 }
 
 .modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1) rotate(3turn);
+    
     height: 581px;
-    position: relative;
+    width: 528px;
     background-color: var(--bcg);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    width: 528px;
     border-radius: 4px;
+
+    transition-property: transform ;
+    transition-duration: 2500ms;
+    transition-timing-function: var(--func) ;
+}
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(1) rotate(3turn);
+
 }
 
 .modal-btn{
